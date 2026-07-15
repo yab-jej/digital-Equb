@@ -1,0 +1,236 @@
+/* Container for full-page form */
+.form-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4f46e5, #9333ea); /* gradient background */
+  position: relative;
+  padding: 1rem;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Form card */
+.form-card {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+  transform: translateY(0);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form heading */
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111827; /* gray-900 */
+  position: relative;
+}
+
+.form-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background-color: #4f46e5;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Form */
+.form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Input wrapper for floating labels */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Input fields */
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* Floating labels */
+.input-label {
+  position: absolute;
+  left: 1rem;
+  top: 0.75rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Move label when input is focused or filled */
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+  top: -0.5rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  color: #4f46e5;
+  background-color: #fff;
+  padding: 0 0.25rem;
+}
+
+/* Buttons */
+.button-login, .button-register {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.button-login {
+  background-color: #4f46e5;
+}
+
+.button-login:hover {
+  background-color: #4338ca;
+  transform: scale(1.05);
+}
+
+.button-register {
+  background-color: #16a34a;
+}
+
+.button-register:hover {
+  background-color: #15803d;
+  transform: scale(1.05);
+}
+
+/* Links */
+.form-link {
+  color: #4f46e5;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.form-link:hover {
+  text-decoration: underline;
+}
+
+/* Password feedback */
+.text-green-500 {
+  color: #16a34a;
+}
+
+.text-red-500 {
+  color: #dc2626;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: white;
+  z-index: 9999;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translate(-50%, -20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.toast.success {
+  background-color: #16a34a;
+}
+
+.toast.error {
+  background-color: #dc2626;
+}
+/* Toast */
+.toast {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 50;
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.success {
+  background-color: #16a34a; /* green-600 */
+}
+
+.toast.error {
+  background-color: #dc2626; /* red-600 */
+}
+
+/* Reset button */
+.button-reset {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #f59e0b; /* yellow-600 */
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-reset:hover {
+  background-color: #d97706; /* yellow-700 */
+  transform: scale(1.05);
+}

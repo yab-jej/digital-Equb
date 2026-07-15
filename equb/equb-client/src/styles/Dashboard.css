@@ -1,0 +1,220 @@
+/* src/styles/Dashboard.css */
+
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, #eef2ff, #ffffff, #f3e8ff);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Header */
+.dashboard-header {
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  opacity: 0.1;
+  filter: blur(100px);
+  z-index: 0;
+  animation: bg-pulse 6s ease-in-out infinite alternate;
+}
+
+.dashboard-logo {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1rem auto;
+  position: relative;
+  z-index: 1;
+  animation: float-logo 3s ease-in-out infinite;
+}
+
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e293b;
+  position: relative;
+  z-index: 1;
+  animation: slide-down 0.8s ease-out forwards;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;  
+  background-clip: text;          
+  -webkit-text-fill-color: transparent;
+  animation: gradient-move 3s linear infinite;
+}
+
+.dashboard-subtitle {
+  color: #475569;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  animation: fade-in 1.2s ease-out forwards;
+}
+
+/* Main */
+.dashboard-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Info Cards Motion & Hover Effects */
+.info-card {
+  background: white;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0) perspective(1000px) rotateX(0deg) rotateY(0deg);
+  cursor: pointer;
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+/* Add smooth 3D tilt effect on hover using transform */
+.info-card:hover {
+  transform: translateY(-10px) scale(1.05) rotateX(3deg) rotateY(3deg);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-color: #7c3aed;
+}
+
+/* Optional subtle glow effect */
+.info-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.2rem;
+  pointer-events: none;
+  box-shadow: 0 0 0 rgba(124, 58, 237, 0.6);
+  transition: box-shadow 0.4s ease;
+}
+
+.info-card:hover::after {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+}
+
+/* Card heading hover color transitions */
+.info-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.indigo-card:hover h2 { color: #4f46e5; transform: translateY(-3px); }
+.violet-card:hover h2 { color: #7c3aed; transform: translateY(-3px); }
+.pink-card:hover h2 { color: #db2777; transform: translateY(-3px); }
+
+/* Footer */
+.dashboard-footer {
+  background: linear-gradient(90deg, #4338ca, #6d28d9, #4338ca);
+  color: #f1f5f9;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: auto;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: fade-up 1.2s ease-out forwards;
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-top: 0.5rem;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-logo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes bg-pulse {
+  0% { filter: blur(80px); opacity: 0.08; }
+  50% { filter: blur(120px); opacity: 0.12; }
+  100% { filter: blur(80px); opacity: 0.08; }
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Logo Animations */
+@keyframes logo-pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.08) rotate(5deg);
+  }
+}
+
+.dashboard-logo {
+  display: inline-block; /* ensure transform works */
+  animation: logo-pulse 3s ease-in-out infinite;
+}
+
+
+/* Ethiopian Equb Logo Animations */
+@keyframes logo-outer-pulse {
+  0%, 100% { transform: scale(1); stroke-opacity: 0.8; }
+  50% { transform: scale(1.05); stroke-opacity: 1; }
+}
+
+@keyframes logo-inner-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Apply animations */
+.dashboard-logo {
+  display: inline-block;
+  animation: logo-outer-pulse 3s ease-in-out infinite;
+  position: relative;
+}
+
+.dashboard-logo svg .inner-circles {
+  transform-origin: 50% 50%;
+  animation: logo-inner-rotate 8s linear infinite;
+}
+
+/* Glow effect on hover */
+.dashboard-logo:hover svg circle {
+  stroke-width: 5;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
+  transition: all 0.3s ease-in-out;
+}

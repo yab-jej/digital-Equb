@@ -1,0 +1,261 @@
+/* General Container */
+.profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  background: #f8fafc;
+}
+
+/* Profile Header */
+.profile-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.profile-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.profile-header p {
+  font-size: 1rem;
+  color: #475569;
+  margin-top: 4px;
+}
+
+/* Wallet Section */
+.wallet-section {
+  background: linear-gradient(135deg, #eef2ff, #f0f9ff);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(59,130,246,0.1);
+  margin-bottom: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.wallet-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(59,130,246,0.15);
+}
+
+.wallet-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.wallet-section .balance {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #10b981;
+  margin-bottom: 20px;
+}
+
+/* Withdraw Button */
+.withdraw-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.withdraw-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(59,130,246,0.35);
+}
+
+/* Withdraw Form */
+.withdraw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  animation: slideFadeIn 0.4s ease forwards;
+  border-left: 4px solid #3b82f6;
+}
+
+.withdraw-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #334155;
+}
+
+.withdraw-form input,
+.withdraw-form select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  margin-top: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.withdraw-form input:focus,
+.withdraw-form select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 6px rgba(59,130,246,0.35);
+  outline: none;
+}
+
+/* Submit Withdraw Button */
+.submit-withdraw-btn {
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background-color: #10b981;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+.submit-withdraw-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(16,185,129,0.35);
+}
+
+/* Transaction Section */
+.transactions-section {
+  margin-top: 40px;
+}
+
+.transactions-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.transactions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.transaction-card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transaction-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.transaction-card.deposit {
+  border-left: 4px solid #10b981;
+}
+
+.transaction-card.withdrawal {
+  border-left: 4px solid #ef4444;
+}
+
+.transaction-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #475569;
+}
+/* Edit Profile Button */
+.edit-profile-btn {
+  margin-top: 12px;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background-color: #f59e0b;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.edit-profile-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(245,158,11,0.35);
+}
+
+/* Edit Profile Form */
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+  background: #fff7ed;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border-left: 4px solid #f59e0b;
+  animation: slideFadeIn 0.3s ease forwards;
+}
+
+.edit-profile-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #334155;
+}
+
+.edit-profile-form input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin-top: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.edit-profile-form input:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 6px rgba(245,158,11,0.35);
+  outline: none;
+}
+
+/* Submit Edit Button */
+.submit-edit-btn {
+  padding: 10px 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background-color: #f97316;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.submit-edit-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(249,115,22,0.35);
+}
+
+/* Animations */
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .wallet-section, .withdraw-form, .transactions-grid {
+    padding: 16px;
+    gap: 12px;
+  }
+  .withdraw-btn, .submit-withdraw-btn {
+    width: 100%;
+  }
+}

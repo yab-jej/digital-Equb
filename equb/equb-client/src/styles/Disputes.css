@@ -1,0 +1,213 @@
+/* src/styles/Disputes.css */
+
+/* Page container */
+.disputes-container {
+  padding: 24px;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #e6f0ff);
+  min-height: 100vh;
+}
+
+/* Page title and subtitle */
+h1 {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+p {
+  color: #475569;
+  font-size: 16px;
+}
+
+/* New Dispute Button */
+.new-dispute-btn {
+  padding: 10px 20px;
+  background-color: #6366f1; /* Indigo */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.new-dispute-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background-color: #4f46e5;
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 41, 59, 0.6); /* dark transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-20px);
+  animation: slideIn 0.4s ease forwards;
+}
+
+/* Form styles */
+.dispute-form label {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: 500;
+  color: #1e293b;
+}
+.dispute-form input,
+.dispute-form select,
+.dispute-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.dispute-form input:focus,
+.dispute-form select:focus,
+.dispute-form textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.25);
+}
+
+/* Textarea */
+.dispute-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Form buttons */
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.submit-btn {
+  background-color: #10b981; /* Emerald */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.submit-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+.cancel-btn {
+  background-color: #f87171; /* Red */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.cancel-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(248, 113, 113, 0.35);
+}
+
+/* Dispute grid */
+.disputes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+/* Dispute card */
+.dispute-card {
+  padding: 18px;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.dispute-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Status indicator */
+.dispute-card.pending {
+  border-left: 5px solid #f87171;
+}
+.dispute-card.under-review {
+  border-left: 5px solid #fbbf24;
+}
+.dispute-card.resolved {
+  border-left: 5px solid #22c55e;
+}
+
+/* Card text */
+.equb-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+.dispute-card p {
+  color: #475569;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.description {
+  font-style: italic;
+  color: #334155;
+}
+
+/* Resolve button inside card */
+.resolve-btn {
+  padding: 6px 12px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.resolve-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
